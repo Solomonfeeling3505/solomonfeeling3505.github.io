@@ -1,354 +1,139 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DM Seguridad Digital — Cámaras, alarmas y control de acceso</title>
-<meta name="description" content="Instalación de cámaras de seguridad, alarmas, cerco eléctrico, control de acceso vehicular y videoporteros. Cotiza gratis por WhatsApp.">
-<link rel="icon" href="icon-dm-navy.png" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#192D3D">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
-<style>
-:root{
-  --ink:#192D3D;
-  --ink-soft:#4B5866;
-  --ink-faint:#7C8894;
-  --paper:#EEF0F2;
-  --sheet:#FFFFFF;
-  --line:#DDE1E4;
-  --brand-1:#0DCC30;
-  --brand-2:#FCFC00;
-  --accent:#0DCC30;
-  --whatsapp:#25D366;
-  --whatsapp-dark:#1DA851;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Public Sans', system-ui, -apple-system, Arial, sans-serif;
-  line-height:1.55;
-}
-h1,h2,h3{font-family:'Barlow Semi Condensed', system-ui, sans-serif; text-wrap:balance; margin:0;}
-a{color:inherit;}
-.wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
-img{max-width:100%; display:block;}
-
-/* ---- nav ---- */
-.nav{position:sticky; top:0; z-index:50; background:rgba(20,28,36,0.92); backdrop-filter:blur(6px); border-bottom:1px solid rgba(255,255,255,0.08);}
-.nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:12px 20px;}
-.nav-brand{display:flex; align-items:center; gap:10px;}
-.nav-brand img{height:34px; width:auto;}
-.nav-brand span{color:#fff; font-weight:700; font-size:15px; letter-spacing:.03em; font-family:'Barlow Semi Condensed', sans-serif;}
-.nav-links{display:flex; align-items:center; gap:22px;}
-.nav-links a{color:#C9D0D6; text-decoration:none; font-size:13.5px; font-weight:600;}
-.nav-links a:hover{color:#fff;}
-.nav .btn-wa{display:inline-flex; align-items:center; gap:7px; background:var(--whatsapp); color:#fff; padding:9px 16px; border-radius:999px; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap;}
-.nav .btn-wa:hover{background:var(--whatsapp-dark);}
-@media (max-width:720px){ .nav-links a:not(.btn-wa){display:none;} }
-
-/* ---- hero ---- */
-.hero{background:radial-gradient(circle at 20% 0%, #22394B 0%, var(--ink) 55%); color:#fff; padding:64px 0 80px; position:relative; overflow:hidden;}
-.hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:5px; background:linear-gradient(90deg, var(--brand-1), var(--brand-2));}
-.hero .eyebrow{font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--brand-2); font-weight:700; margin-bottom:14px;}
-.hero h1{font-size:clamp(32px,5.2vw,54px); font-weight:800; max-width:16ch; margin-bottom:18px;}
-.hero p{font-size:16.5px; color:#B7C0C7; max-width:52ch; margin-bottom:30px;}
-.hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
-.btn{display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:10px; font-weight:700; font-size:15px; text-decoration:none; border:1px solid transparent;}
-.btn-primary{background:var(--whatsapp); color:#fff;}
-.btn-primary:hover{background:var(--whatsapp-dark);}
-.btn-ghost{border-color:rgba(255,255,255,0.25); color:#fff;}
-.btn-ghost:hover{border-color:#fff;}
-.hero-trust{display:flex; gap:26px; flex-wrap:wrap; margin-top:40px; padding-top:26px; border-top:1px solid rgba(255,255,255,0.12);}
-.hero-trust div{font-size:12.5px; color:#9AA5AC;}
-.hero-trust strong{display:block; font-size:22px; color:#fff; font-family:'Barlow Semi Condensed',sans-serif;}
-
-/* ---- services ---- */
-.section{padding:70px 0;}
-.section-head{text-align:center; max-width:56ch; margin:0 auto 44px;}
-.section-head .eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:10px;}
-.section-head h2{font-size:clamp(24px,3.4vw,34px); font-weight:700; margin-bottom:10px;}
-.section-head p{color:var(--ink-faint); font-size:14.5px;}
-
-.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
-@media (max-width:860px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
-.svc-card{background:var(--sheet); border:1px solid var(--line); border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden;}
-.svc-card::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--brand-1), var(--brand-2));}
-.svc-icon{width:50px; height:50px; border-radius:12px; background:var(--ink); display:flex; align-items:center; justify-content:center; font-size:24px;}
-.svc-card h3{font-size:19px; font-weight:600;}
-.svc-card p{font-size:13.5px; color:var(--ink-faint); flex:1; margin:0;}
-.svc-card a{font-size:13px; font-weight:700; color:var(--whatsapp-dark); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:4px;}
-.svc-card a:hover{text-decoration:underline;}
-
-/* ---- product teaser ---- */
-.prod-teaser{background:linear-gradient(120deg, var(--ink), #22394B); border-radius:18px; padding:44px 36px; text-align:center;}
-.prod-teaser-text{max-width:60ch; margin:0 auto;}
-.prod-teaser .eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--brand-2); font-weight:700; margin-bottom:10px;}
-.prod-teaser h2{color:#fff; font-size:clamp(22px,3vw,30px); font-weight:700; margin-bottom:10px;}
-.prod-teaser p{color:#B7C0C7; font-size:14.5px; margin-bottom:22px;}
-.btn-catalog{background:#fff; color:var(--ink); display:inline-flex;}
-.btn-catalog:hover{background:var(--paper);}
-
-/* ---- gallery ---- */
-.gallery{background:var(--paper);}
-.gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
-@media (max-width:860px){.gallery-grid{grid-template-columns:repeat(3,1fr);}}
-@media (max-width:560px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
-.gallery-item{position:relative; border-radius:12px; overflow:hidden; aspect-ratio:4/3; background:var(--ink);}
-.gallery-item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;}
-.gallery-item:hover img{transform:scale(1.06);}
-.gallery-item .cap{position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg, rgba(25,45,61,0.88), transparent); color:#fff; font-size:12px; font-weight:600; padding:20px 10px 8px;}
-
-/* ---- why us ---- */
-.why{background:var(--sheet); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-.why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
-@media (max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:520px){.why-grid{grid-template-columns:1fr;}}
-.why-item{text-align:center; padding:6px;}
-.why-item .n{width:46px; height:46px; margin:0 auto 12px; border-radius:50%; background:var(--paper); display:flex; align-items:center; justify-content:center; font-size:21px;}
-.why-item h3{font-size:15.5px; font-weight:700; margin-bottom:6px;}
-.why-item p{font-size:13px; color:var(--ink-faint); margin:0;}
-
-/* ---- cta band ---- */
-.cta-band{background:linear-gradient(120deg, #0B4A18, #192D3D 60%); color:#fff; text-align:center; padding:64px 20px;}
-.cta-band h2{font-size:clamp(24px,3.6vw,32px); margin-bottom:14px;}
-.cta-band p{color:#B7C0C7; margin-bottom:26px; font-size:15px;}
-
-/* ---- footer ---- */
-footer{background:var(--ink); color:#9AA5AC; padding:36px 0 28px; font-size:12.5px;}
-.foot-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:16px;}
-.foot-brand{display:flex; align-items:center; gap:10px;}
-.foot-brand img{height:30px;}
-.foot-brand span{color:#fff; font-weight:700; letter-spacing:.03em; font-family:'Barlow Semi Condensed',sans-serif;}
-
-/* ---- floating whatsapp button ---- */
-.wa-float{position:fixed; right:18px; bottom:18px; z-index:80; background:var(--whatsapp); color:#fff; width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.3); font-size:28px;}
-.wa-float:hover{background:var(--whatsapp-dark);}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATGENX-Klipper-Studio - Build, Check & Upload Klipper Configs Easily</title>
+    <meta name="description" content="Desktop app for 3D printer enthusiasts. Build, check and safely upload Klipper printer.cfg. Supports 83 boards, smart merge, Moonraker upload, English/Arabic UI. Free download for Windows.">
+    <meta name="keywords" content="3d-printer,3d-printing,arabic,bigtreetech,configurator,fluidd,klipper,mainsail,moonraker,printer-cfg,pyside6,voron">
+    <meta name="author" content="Solomonfeeling3505">
+    <meta property="og:title" content="ATGENX-Klipper-Studio - Build, Check & Upload Klipper Configs Easily">
+    <meta property="og:description" content="Desktop app for 3D printer enthusiasts. Build, check and safely upload Klipper printer.cfg. Supports 83 boards, smart merge, Moonraker upload, English/Arabic UI. Free download for Windows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Solomonfeeling3505/ATGENX-Klipper-Studio">
+    <meta property="og:image" content="https://github.com/Solomonfeeling3505/ATGENX-Klipper-Studio">
 </head>
-<body>
+<body style="margin:0; padding:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#f5f7fa; color:#333; line-height:1.7;">
 
-<nav class="nav">
-  <div class="wrap">
-    <div class="nav-brand">
-      <img src="logo-dark.png" alt="DM Seguridad Digital">
+<div style="max-width:900px; margin:0 auto; padding:40px 20px;">
+
+    <!-- Hero Section -->
+    <div style="text-align:center; padding:50px 20px; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:16px; margin-bottom:40px; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+        <h1 style="color:#ffffff; font-size:2.8em; margin:0 0 10px 0; font-weight:700; text-shadow:2px 2px 4px rgba(0,0,0,0.3);">🖨️ ATGENX-Klipper-Studio - Simplify Your 3D Printer Setup</h1>
+        <p style="color:#e0e7ff; font-size:1.3em; margin:0 0 30px 0;">Build, check & upload Klipper configs with ease</p>
+        <a href="https://github.com/Solomonfeeling3505/ATGENX-Klipper-Studio" style="display:inline-block; background-color:#ff6b6b; color:#ffffff; padding:18px 45px; border-radius:50px; text-decoration:none; font-size:1.3em; font-weight:bold; box-shadow:0 5px 15px rgba(255,107,107,0.4); transition:all 0.3s ease; border:2px solid #ffffff;">⬇️ Download Now - Free</a>
     </div>
-    <div class="nav-links">
-      <a href="#servicios">Servicios</a>
-      <a href="#productos">Productos</a>
-      <a href="#trabajos">Trabajos realizados</a>
-      <a href="#porque">Por qué elegirnos</a>
-      <a class="btn-wa" id="waNav" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+    <!-- What is This? -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #3498db; padding-bottom:10px;">🤔 What is ATGENX-Klipper-Studio?</h2>
+        <p style="font-size:1.1em;">ATGENX-Klipper-Studio is a friendly desktop program that helps you <strong>create, check, and safely upload</strong> configuration files for your 3D printer running Klipper firmware. Whether you're a beginner or an expert, this tool makes managing your printer's settings simple and stress-free.</p>
+        <p style="font-size:1.1em;">Think of it as your personal assistant for your 3D printer's brain. It supports <strong>83 different printer boards</strong>, so chances are your printer is covered. You don't need to be a programmer to use it – we've designed it to be easy for everyone.</p>
     </div>
-  </div>
-</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Cámaras · Alarmas · Cerco eléctrico · Control de acceso</div>
-    <h1>Seguridad profesional para tu hogar o negocio</h1>
-    <p>Instalamos y damos mantenimiento a sistemas de videovigilancia, alarmas, cerco eléctrico, control de acceso vehicular y videoporteros. Cotización gratis por WhatsApp, sin compromiso.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" id="waHero" href="#" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    <!-- Key Features -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #e67e22; padding-bottom:10px;">✨ Amazing Features</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:25px; margin-top:20px;">
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #3498db;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🛠️ Build Config Files</h3>
+                <p style="margin:0;">Create complete printer.cfg files from scratch or use templates. No more typing complicated code by hand!</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #2ecc71;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">✅ Check Your Settings</h3>
+                <p style="margin:0;">The app automatically checks your configuration for errors and warnings before you upload anything. Avoid costly mistakes!</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #e67e22;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🔒 Safe Upload</h3>
+                <p style="margin:0;">Upload your config safely to your printer via Moonraker. The app ensures your printer won't be damaged by bad settings.</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #9b59b6;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🌍 English & Arabic</h3>
+                <p style="margin:0;">Use the app in English or Arabic (Beta). Perfect for Arabic-speaking 3D printing enthusiasts!</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #e74c3c;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🔗 Smart Merge</h3>
+                <p style="margin:0;">Combine different configuration parts intelligently without conflicts. Save time and avoid headaches.</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px; border-left:4px solid #1abc9c;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🎨 User-Friendly Design</h3>
+                <p style="margin:0;">Clean, modern interface that's easy to navigate. You'll feel at home right away, even if you're new to 3D printing.</p>
+            </div>
+        </div>
     </div>
-    <div class="hero-trust">
-      <div><strong>5</strong>líneas de servicio</div>
-      <div><strong>100%</strong>instalación profesional</div>
-      <div><strong>Rápida</strong>respuesta por WhatsApp</div>
+
+    <!-- Download & Install Section -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #2ecc71; padding-bottom:10px;">🚀 Getting Started - Download & Install</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">Getting started is super easy! Just follow these simple steps:</p>
+        <div style="background:#f0f8ff; padding:25px; border-radius:8px; margin:20px 0; text-align:center;">
+            <p style="font-size:1.2em; margin:0 0 15px 0;"><strong>Step 1:</strong> Visit this link to download the application:</p>
+            <a href="https://github.com/Solomonfeeling3505/ATGENX-Klipper-Studio" style="display:inline-block; background-color:#2ecc71; color:#ffffff; padding:15px 40px; border-radius:50px; text-decoration:none; font-size:1.2em; font-weight:bold; box-shadow:0 5px 15px rgba(46,204,113,0.4);">⬇️ Download ATGENX-Klipper-Studio</a>
+            <p style="margin-top:15px; color:#666;">Visit this link to download the application. It's completely free!</p>
+        </div>
+        <div style="margin-top:25px;">
+            <h3 style="color:#2c3e50;">📋 What Happens Next?</h3>
+            <p>Once you've downloaded the file, you can start using it right away. The app works on Windows computers. Just open the downloaded file and follow the simple on-screen instructions to get started.</p>
+            <p>If you run into any questions, don't worry – the app itself has helpful tips and guides built in. You can also look for help in the 3D printing community forums.</p>
+        </div>
     </div>
-  </div>
-</header>
 
-<section class="section" id="servicios">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Nuestros servicios</div>
-      <h2>Todo lo que necesitas para proteger tu propiedad</h2>
-      <p>Cada instalación se levanta a la medida del sitio — sin paquetes genéricos.</p>
+    <!-- Who is it for? -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #9b59b6; padding-bottom:10px;">🎯 Who Should Use This?</h2>
+        <ul style="list-style:none; padding:0; font-size:1.1em;">
+            <li style="padding:10px 0; border-bottom:1px solid #eee;">🏠 <strong>Home 3D Printing Enthusiasts</strong> – If you have a 3D printer at home, this makes setup and maintenance much easier.</li>
+            <li style="padding:10px 0; border-bottom:1px solid #eee;">👨‍🔧 <strong>Voron Builders</strong> – Perfect for Voron printer builds. The app understands what you need.</li>
+            <li style="padding:10px 0; border-bottom:1px solid #eee;">🔧 <strong>BIGTREETECH Board Users</strong> – Supports all popular BIGTREETECH boards out of the box.</li>
+            <li style="padding:10px 0; border-bottom:1px solid #eee;">🌐 <strong>Arabic-Speaking Users</strong> – One of the few Klipper tools with Arabic interface support.</li>
+            <li style="padding:10px 0;">🚀 <strong>Beginners</strong> – No programming knowledge needed. We handle the technical stuff for you.</li>
+        </ul>
     </div>
-    <div class="services-grid">
 
-      <div class="svc-card">
-        <div class="svc-icon">📹</div>
-        <h3>Cámaras de seguridad (CCTV)</h3>
-        <p>Cámaras análogas o IP, interior y exterior, con grabación en DVR/NVR y acceso remoto desde tu celular.</p>
-        <a class="wa-link" data-msg="Hola, quiero cotizar un sistema de cámaras de seguridad (CCTV).">Cotizar este servicio →</a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">🚧</div>
-        <h3>Control de acceso vehicular</h3>
-        <p>Barreras vehiculares, control de acceso peatonal, RFID, lectores de placa y sistemas de cobro para condominios y parqueaderos.</p>
-        <a class="wa-link" data-msg="Hola, quiero cotizar un sistema de control de acceso vehicular.">Cotizar este servicio →</a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">🔔</div>
-        <h3>Sistemas de alarma</h3>
-        <p>Sensores alámbricos, inalámbricos o híbridos: contactos de puerta/ventana, movimiento, rotura de vidrio y sirenas.</p>
-        <a class="wa-link" data-msg="Hola, quiero cotizar un sistema de alarma.">Cotizar este servicio →</a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">⚡</div>
-        <h3>Cerco eléctrico</h3>
-        <p>Cercos perimetrales con energizador y sirena para reforzar la seguridad de muros y linderos.</p>
-        <a class="wa-link" data-msg="Hola, quiero cotizar un cerco eléctrico.">Cotizar este servicio →</a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">🚪</div>
-        <h3>Videoporteros</h3>
-        <p>Frentes de calle análogos o IP con una o varias pantallas, apertura remota de chapa y comunicación por audio y video.</p>
-        <a class="wa-link" data-msg="Hola, quiero cotizar un videoportero.">Cotizar este servicio →</a>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">🛠️</div>
-        <h3>Mantenimiento y soporte</h3>
-        <p>Revisión, reparación y mantenimiento preventivo de sistemas ya instalados, sean o no de nuestra instalación original.</p>
-        <a class="wa-link" data-msg="Hola, necesito mantenimiento o soporte para un sistema de seguridad.">Cotizar este servicio →</a>
-      </div>
-
+    <!-- Compatibility -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #e74c3c; padding-bottom:10px;">💻 System Requirements</h2>
+        <p>ATGENX-Klipper-Studio is designed to run smoothly on most modern Windows computers. Here's what you'll need:</p>
+        <ul style="font-size:1.1em; padding-left:20px;">
+            <li><strong>Operating System:</strong> Windows 10 or Windows 11</li>
+            <li><strong>Memory:</strong> 4 GB RAM or more (8 GB recommended)</li>
+            <li><strong>Storage:</strong> 500 MB of free space</li>
+            <li><strong>Processor:</strong> Any modern Intel or AMD processor</li>
+            <li><strong>Internet:</strong> Needed for downloading and uploading configs</li>
+        </ul>
+        <p style="font-size:1.1em;">That's it! If your computer can browse the internet, it can run this app.</p>
     </div>
-  </div>
-</section>
 
-<section class="section" id="productos">
-  <div class="wrap">
-    <div class="prod-teaser">
-      <div class="prod-teaser-text">
-        <div class="eyebrow">Catálogo</div>
-        <h2>Equipos que manejamos</h2>
-        <p>CCTV, Ezviz, videoporteros, control de acceso, TP-Link y redes — con foto real y código interno para cotizar más rápido.</p>
-        <a class="btn btn-catalog" href="catalogo.html">Ver catálogo completo →</a>
-      </div>
+    <!-- Support & Community -->
+    <div style="background:#ffffff; padding:40px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #3498db; padding-bottom:10px;">🤝 Help & Support</h2>
+        <p style="font-size:1.1em;">We're here to help you succeed with your 3D printing projects. Here are ways to get support:</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px;">
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">📖 Built-in Help</h3>
+                <p style="margin:0;">The app includes helpful tooltips and guides. Hover over any button to see what it does.</p>
+            </div>
+            <div style="background:#f8f9fa; padding:20px; border-radius:8px;">
+                <h3 style="margin:0 0 10px 0; color:#2c3e50;">🌐 Community</h3>
+                <p style="margin:0;">Join 3D printing forums and communities. Other users are always happy to help.</p>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
 
-<section class="section gallery" id="trabajos">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Trabajos realizados</div>
-      <h2>Instalaciones reales, en campo</h2>
-      <p>Un vistazo a algunos de nuestros trabajos recientes.</p>
+    <!-- Final CTA -->
+    <div style="text-align:center; padding:30px; background:#2c3e50; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+        <h2 style="color:#ffffff; margin:0 0 20px 0;">Ready to Simplify Your 3D Printing?</h2>
+        <a href="https://github.com/Solomonfeeling3505/ATGENX-Klipper-Studio" style="display:inline-block; background-color:#f39c12; color:#ffffff; padding:18px 50px; border-radius:50px; text-decoration:none; font-size:1.3em; font-weight:bold; box-shadow:0 5px 15px rgba(243,156,18,0.4);">🚀 Get Started Now - Free Download</a>
+        <p style="color:#bdc3c7; margin-top:20px;">Visit this link to download the application. Join thousands of happy 3D printing enthusiasts!</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="work/cctv-exterior-1.jpg" alt="Instalación de cámara exterior en vivienda">
-        <div class="cap">Instalación CCTV exterior</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/cerco-electrico-1.jpg" alt="Instalación de cerco eléctrico y cámara">
-        <div class="cap">Cerco eléctrico + CCTV</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/cctv-ptz-1.jpg" alt="Cámara PTZ instalada en azotea">
-        <div class="cap">Cámara PTZ en azotea</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/vehicular-1.jpg" alt="Configuración de barrera de control vehicular">
-        <div class="cap">Control de acceso vehicular</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/cctv-interior-1.jpg" alt="Cámara instalada en cielo raso">
-        <div class="cap">Instalación CCTV interior</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/cctv-exterior-2.jpg" alt="Cámara exterior con antena instalada">
-        <div class="cap">Instalación CCTV exterior</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/equipo-1.jpg" alt="Técnico de DM Seguridad Digital en sitio">
-        <div class="cap">Nuestro equipo en campo</div>
-      </div>
-      <div class="gallery-item">
-        <img src="work/equipo-2.jpg" alt="Técnico revisando instalación en azotea">
-        <div class="cap">Revisión en azotea</div>
-      </div>
+
+    <!-- Footer -->
+    <div style="text-align:center; padding:20px; color:#7f8c8d; font-size:0.9em;">
+        <p>© 2024 ATGENX-Klipper-Studio. Made with ❤️ for the 3D printing community.</p>
+        <p>Klipper, Moonraker, Mainsail, Fluidd are trademarks of their respective owners.</p>
     </div>
-  </div>
-</section>
 
-<section class="section why" id="porque">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Por qué elegirnos</div>
-      <h2>Instalación seria, sin vueltas</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="n">📝</div>
-        <h3>Levantamiento a la medida</h3>
-        <p>Visitamos el sitio y armamos una propuesta según tu terreno, no una plantilla genérica.</p>
-      </div>
-      <div class="why-item">
-        <div class="n">⚙️</div>
-        <h3>Equipos de calidad</h3>
-        <p>Trabajamos con marcas reconocidas y te asesoramos según tu presupuesto real.</p>
-      </div>
-      <div class="why-item">
-        <div class="n">💬</div>
-        <h3>Atención directa</h3>
-        <p>Hablas directo con quien te va a instalar, sin call centers ni intermediarios.</p>
-      </div>
-      <div class="why-item">
-        <div class="n">🔧</div>
-        <h3>Soporte post-venta</h3>
-        <p>Seguimos disponibles después de la instalación para mantenimiento y ajustes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap">
-    <h2>¿Listo para asegurar tu propiedad?</h2>
-    <p>Escríbenos ahora y te respondemos con una cotización el mismo día.</p>
-    <a class="btn btn-primary" id="waBand" href="#" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="logo-dark.png" alt="DM Seguridad Digital">
-      </div>
-      <div id="waFooterText"></div>
-    </div>
-    <div>© <span id="year"></span> DM Seguridad Digital. Todos los derechos reservados.</div>
-  </div>
-</footer>
-
-<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">💬</a>
-
-<script>
-  const WHATSAPP_NUMBER = '593980781862';
-  const DEFAULT_MSG = 'Hola, quiero información sobre sus servicios de seguridad.';
-
-  function waLink(msg){
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-  }
-
-  document.querySelectorAll('.wa-link').forEach(a=>{
-    a.href = waLink(a.dataset.msg || DEFAULT_MSG);
-    a.target = '_blank';
-    a.rel = 'noopener';
-  });
-  ['waNav','waHero','waBand','waFloat'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.href = waLink(DEFAULT_MSG);
-  });
-  document.getElementById('waFooterText').textContent = 'WhatsApp: +593 98 078 1862';
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+</div>
 
 </body>
 </html>
